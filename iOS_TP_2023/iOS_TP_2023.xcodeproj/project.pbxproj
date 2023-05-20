@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC16ADED2A1925110026F971 /* ReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC16ADEC2A1925110026F971 /* ReadingView.swift */; };
 		EC53C5462A17F10B0059384A /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = EC53C5452A17F10B0059384A /* Fakery */; };
 		EC53C5492A17F1B10059384A /* EasyFake in Frameworks */ = {isa = PBXBuildFile; productRef = EC53C5482A17F1B10059384A /* EasyFake */; };
 		EC711EF62A12F62A00340CD5 /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC711EF52A12F62A00340CD5 /* Stub.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC16ADEC2A1925110026F971 /* ReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingView.swift; sourceTree = "<group>"; };
 		EC711EF52A12F62A00340CD5 /* Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stub.swift; sourceTree = "<group>"; };
 		ECCFB9462A12EB3100BFEE20 /* CardDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDisplay.swift; sourceTree = "<group>"; };
 		ECCFB9492A12EBC800BFEE20 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 			children = (
 				ECCFB9462A12EB3100BFEE20 /* CardDisplay.swift */,
 				ECFFD2C72A0D81CD00B185CE /* DataView.swift */,
+				EC16ADEC2A1925110026F971 /* ReadingView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				ECFFD2C82A0D81CD00B185CE /* DataView.swift in Sources */,
 				EC711EF62A12F62A00340CD5 /* Stub.swift in Sources */,
 				ECFE83AA2A0D01F0009FBD9D /* BodcastView.swift in Sources */,
+				EC16ADED2A1925110026F971 /* ReadingView.swift in Sources */,
 				ECCFB9472A12EB3100BFEE20 /* CardDisplay.swift in Sources */,
 				ECCFB94A2A12EBC800BFEE20 /* Album.swift in Sources */,
 			);

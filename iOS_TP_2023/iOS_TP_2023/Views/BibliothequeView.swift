@@ -12,8 +12,9 @@ struct BibliothequeView: View {
     let albums:[Album]
     var body: some View {
         NavigationView{
-            NavigationLink(destination: BodcastView(),
-                           label: {
+            NavigationLink{
+                BodcastView()
+            }label: {
                 ScrollView{
                     LazyVGrid(columns: comlumn,spacing: 20){
                         ForEach(albums) { album in
@@ -22,9 +23,34 @@ struct BibliothequeView: View {
                         
                     }.padding()
                 }
-            }).navigationTitle("Podcasts")
+            }.navigationTitle("Podcasts")
+                .toolbar{
+                ToolbarItem(placement: .navigationBarLeading){
+                    HStack{
+                        Image(systemName: "chevron.backward")
+                            .foregroundColor(Color("customColor"))
+                        Text("Bibliothèque")
+                            .foregroundColor(Color("customColor"))
+                    }
+                }
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Image("ellipsis.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25)
+                            .foregroundColor(Color("customColor"))
+                    }
+                }
            
         }
+        .navigationTitle("Podcasts")
+            .toolbar{
+            ToolbarItemGroup(placement: .bottomBar){
+                
+                ReadingView()
+            }
+        }
+        
         
     }
     

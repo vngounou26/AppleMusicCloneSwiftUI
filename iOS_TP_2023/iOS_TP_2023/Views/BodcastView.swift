@@ -20,128 +20,117 @@ struct BodcastView: View {
     private var images:[String]=["album0","album1","album2","album3","album4","album5","album6","album7","album8","album9","album10","album11","album12"]
     
     var body: some View {
+        let albumTilte = faker.company.name()
         VStack{
             let imageToDisplay = images.randomElement()
-            let albumTilte = faker.company.name()
-            ScrollView{
+            //ScrollView{
                 NavigationView{
                     ZStack{
                         color.ignoresSafeArea()
-                        VStack{
-                            Image(imageToDisplay!)
-                                .cornerRadius(15)
-                                .scaledToFit()
-                                .shadow(radius: 20)
-                                .onReceive(Just(UIImage(named: imageToDisplay!))) { uiImage in
-                                    if let averageColor =
-                                        uiImage?
-                                        .averageColor {
-                                        self.color =
-                                        Color(averageColor)
-                                        textBtnColor=color.isLight() ? Color.white : Color.black
-                                        backgoundColor=color.isLight() ? Color.black : Color.gray
-                                        textColor=color.isLight() ? Color.black : Color.gray
-                                    }
-                                }
-                            Text(albumTilte)
-                                .font(.title)
-                                .bold()
-                                .foregroundColor(.white)
-                                .lineLimit(1)
-                                .padding([.trailing,.leading])
-                            HStack{
+                        ScrollView{
+                                VStack{
                                 Image(imageToDisplay!)
-                                    .resizable()
+                                    .cornerRadius(15)
                                     .scaledToFit()
-                                    .clipShape(Circle())
-                                    .frame(maxWidth: 45)
-                                    .tint(.white)
-                                Text(faker.commerce.productName())
-                                    .font(.title2)
-                                Image(systemName: "chevron.right")
-                            }.foregroundColor(.gray)
-                            Button{
-                                isPlay.toggle()
-                            }label: {
+                                    .shadow(radius: 20)
+                                    .onReceive(Just(UIImage(named: imageToDisplay!))) { uiImage in
+                                        if let averageColor =
+                                            uiImage?
+                                            .averageColor {
+                                            self.color =
+                                            Color(averageColor)
+                                            textBtnColor=color.isLight() ? Color.white : Color.black
+                                            backgoundColor=color.isLight() ? Color.black : Color.gray
+                                            textColor=color.isLight() ? Color.black : Color.gray
+                                        }
+                                    }
+                                Text(albumTilte)
+                                    .font(.title)
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .lineLimit(1)
+                                    .padding([.trailing,.leading])
                                 HStack{
-                                    Image(systemName: isPlay ? "play.fill":"pause.fill")
-                                    Text("Demarrer l'épisode")
+                                    Image(imageToDisplay!)
+                                        .resizable()
+                                        .scaledToFit()
+                                        .clipShape(Circle())
+                                        .frame(maxWidth: 45)
+                                        .tint(.white)
+                                    Text(faker.commerce.productName())
+                                        .font(.title2)
+                                    Image(systemName: "chevron.right")
+                                }.foregroundColor(.gray)
+                                Button{
+                                    isPlay.toggle()
+                                }label: {
+                                    HStack{
+                                        Image(systemName: isPlay ? "play.fill":"pause.fill")
+                                        Text("Demarrer l'épisode")
+                                        
+                                    }.padding()
                                     
-                                }.padding()
+                                }.background(backgoundColor)
+                                    .cornerRadius(10)
+                                    .foregroundColor(textBtnColor)
                                 
-                            }.background(backgoundColor)
-                                .cornerRadius(10)
-                                .foregroundColor(textBtnColor)
-                            
-                            ZStack(alignment: .bottomTrailing){
-                                Text("myTef uhenvbehiv ejvnhebvb ejkvb ejbvebk evbev bekjvevbekvbejvej bv evbeveb vekve bvk ehbv kevneve bvk ej vevbekv jevj evbejkvbevbejv ejvcegflk jejneiuvbiuvevnekvbrjebvex")
-                                    .foregroundColor(textColor)
-                                    .lineLimit(showFullText ? nil:3)
-                                    .padding(10)
-                                
-                                
-                                Button(action: {
-                                    showFullText.toggle()
+                                ZStack(alignment: .bottomTrailing){
+                                    Text("myTef uhenvbehiv ejvnhebvb ejkvb ejbvebk evbev bekjvevbekvbejvej bv evbeveb vekve bvk ehbv kevneve bvk ej vevbekv jevj evbejkvbevbejv ejvcegflk jejneiuvbiuvevnekvbrjebvex")
+                                        .foregroundColor(textColor)
+                                        .lineLimit(showFullText ? nil:3)
+                                        .padding(10)
                                     
-                                }) { Text(showFullText ? "Moins" : "Plus")
-                                        .foregroundColor(.black)
+                                    
+                                    Button(action: {
+                                        showFullText.toggle()
+                                        
+                                    }) { Text(showFullText ? "Moins" : "Plus")
+                                            .foregroundColor(.black)
+                                    }
+                                    .shadow(color: .black,radius: 40)
+                                    .buttonStyle(.bordered)
+                                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 6))
                                 }
-                                .shadow(color: .black,radius: 40)
-                                .buttonStyle(.bordered)
-                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 6))
+                                HStack{
+                                    Image("star.fill")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: 20)
+                                    Text("4.8 (458) .").foregroundColor(.gray)
+                                    Text("Actualité .").foregroundColor(.gray)
+                                    Text("Chaque semaine")
+                                        .foregroundColor(.gray)
+                                        .multilineTextAlignment(.leading)
+                                }
+                                Divider()
+                                DataView()
                             }
-                            HStack{
-                                Image("star.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20)
-                                Text("4.8 (458) .").foregroundColor(.gray)
-                                Text("Actualité .").foregroundColor(.gray)
-                                Text("Chaque semaine")
-                                    .foregroundColor(.gray)
-                                    .multilineTextAlignment(.leading)
-                            }
-                            Divider()
-                            DataView()
-                        }.padding(0)
-                    }.padding(0)
-                }.padding(0)
-                .navigationBarItems(
-                leading:
-                    HStack{
-                        Spacer()
-                        Text(albumTilte)
-                        .foregroundColor(.black)
-                        .lineLimit(1)
-                    }.frame(maxWidth: 200),
-                trailing:
-                    Button(action: {
-                        // Ajouter l'action du bouton ici
-                    }) {
-                        Image(systemName: "plus")
-                        Image("ellipsis.circle.fill")
+                        }
                     }
-            )
-                Spacer()
-                HStack(spacing: 20){
-                    Image(imageToDisplay!)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: 40)
-                        .cornerRadius(15)
-                    VStack(alignment: .leading){
-                        Text("Nadie Sabe Nada")
-                        Text("29 avril 2023")
-                            .foregroundColor(.gray)
-                    }
-                    Spacer()
-                    Image(systemName: "play.fill")
-                        .padding([.leading, .trailing], 10)
-                    Image(systemName: "gobackward.30")
-                        .padding([.leading, .trailing], 10)
                 }
-                .frame(maxHeight: 30)
-            }.background(color)
+            
+        }.toolbar{
+            ToolbarItem(placement: .principal){
+                Text(albumTilte)
+                    .lineLimit(1)
+                
+            }
+            ToolbarItem(placement: .navigationBarTrailing){
+                HStack{
+                    Button{
+                    }label: {
+                        Image(systemName: "square.and.arrow.down")
+                    }
+                    Button{
+                    }label: {
+                        Image("ellipsis.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25)
+                    }
+                }
+            }
+            
         }
     }
 }
@@ -153,6 +142,14 @@ struct BodcastView_Previews: PreviewProvider {
         BodcastView()
     }
 }
+
+struct BodcastView_Previewss: PreviewProvider {
+    static var previews: some View {
+        BodcastView().preferredColorScheme(.dark)
+    }
+}
+
+
 
 
 extension UIImage {

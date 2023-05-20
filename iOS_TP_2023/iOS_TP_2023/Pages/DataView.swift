@@ -70,7 +70,7 @@ struct DataView: View {
                     .padding()
                 }
             }
-        }.background(Color.white)
+        }.background(Color("BacColor"))
         
     }
 }

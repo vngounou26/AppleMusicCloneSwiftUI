@@ -8,9 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
+        
         TabView{
-            Text("In Comming")
+            VStack {
+                Button(action: {
+                                if colorScheme == .light {
+                                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                                        windowScene.windows.first?.overrideUserInterfaceStyle = .dark
+                                    }
+                                } else {
+                                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                                        windowScene.windows.first?.overrideUserInterfaceStyle = .light
+                                    }
+                                }
+                            }) {
+                                Text("Toggle Theme")
+                            }
+                            .padding()
+                        .buttonStyle(.borderedProminent)
+                    }
                 .tabItem{
                     Label("Ecouter",systemImage: "play.circle.fill")
                 }
@@ -22,6 +40,7 @@ struct ContentView: View {
                 .tabItem{
                     Label("Bibliotêque",systemImage: "square.stack.fill")
                 }
+                //.preferredColorScheme(.dark)
             Text("In Comming")
                 .tabItem{
                     Label("Rechercher", systemImage: "magnifyingglass")

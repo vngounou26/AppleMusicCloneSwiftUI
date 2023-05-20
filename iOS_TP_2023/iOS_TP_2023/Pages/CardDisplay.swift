@@ -20,8 +20,8 @@ struct CardDisplay: View {
                 .cornerRadius(10)
             Text(album.Title)
                 .bold()
+                .foregroundColor(Color("CustomDarck"))
                 .font(.title3)
-                .foregroundColor(.black)
                 .lineLimit(1)
                 
             Text(album.Description)
