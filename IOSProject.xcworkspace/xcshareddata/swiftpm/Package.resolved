@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "easyfake",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onmyway133/EasyFake",
+      "state" : {
+        "branch" : "main",
+        "revision" : "33b71d7753126b8347a032b195e438935df775db"
+      }
+    },
+    {
+      "identity" : "fakery",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vadymmarkov/Fakery",
+      "state" : {
+        "revision" : "71cb3bf36a808534659d1248780c2bf3c4c4fc91",
+        "version" : "5.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}

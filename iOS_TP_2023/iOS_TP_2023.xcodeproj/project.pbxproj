@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC53C5462A17F10B0059384A /* Fakery in Frameworks */ = {isa = PBXBuildFile; productRef = EC53C5452A17F10B0059384A /* Fakery */; };
+		EC53C5492A17F1B10059384A /* EasyFake in Frameworks */ = {isa = PBXBuildFile; productRef = EC53C5482A17F1B10059384A /* EasyFake */; };
 		EC711EF62A12F62A00340CD5 /* Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC711EF52A12F62A00340CD5 /* Stub.swift */; };
 		ECCFB9472A12EB3100BFEE20 /* CardDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFB9462A12EB3100BFEE20 /* CardDisplay.swift */; };
 		ECCFB94A2A12EBC800BFEE20 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCFB9492A12EBC800BFEE20 /* Album.swift */; };
@@ -65,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC53C5462A17F10B0059384A /* Fakery in Frameworks */,
+				EC53C5492A17F1B10059384A /* EasyFake in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +208,10 @@
 			dependencies = (
 			);
 			name = iOS_TP_2023;
+			packageProductDependencies = (
+				EC53C5452A17F10B0059384A /* Fakery */,
+				EC53C5482A17F1B10059384A /* EasyFake */,
+			);
 			productName = iOS_TP_2023;
 			productReference = ECFE83772A0D004C009FBD9D /* iOS_TP_2023.app */;
 			productType = "com.apple.product-type.application";
@@ -276,6 +284,10 @@
 				Base,
 			);
 			mainGroup = ECFE836E2A0D004C009FBD9D;
+			packageReferences = (
+				EC53C5442A17F10B0059384A /* XCRemoteSwiftPackageReference "Fakery" */,
+				EC53C5472A17F1B10059384A /* XCRemoteSwiftPackageReference "EasyFake" */,
+			);
 			productRefGroup = ECFE83782A0D004C009FBD9D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -645,6 +657,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EC53C5442A17F10B0059384A /* XCRemoteSwiftPackageReference "Fakery" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vadymmarkov/Fakery";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		EC53C5472A17F1B10059384A /* XCRemoteSwiftPackageReference "EasyFake" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onmyway133/EasyFake";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC53C5452A17F10B0059384A /* Fakery */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC53C5442A17F10B0059384A /* XCRemoteSwiftPackageReference "Fakery" */;
+			productName = Fakery;
+		};
+		EC53C5482A17F1B10059384A /* EasyFake */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC53C5472A17F1B10059384A /* XCRemoteSwiftPackageReference "EasyFake" */;
+			productName = EasyFake;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ECFE836F2A0D004C009FBD9D /* Project object */;
 }

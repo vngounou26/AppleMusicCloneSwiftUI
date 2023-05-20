@@ -10,11 +10,11 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView{
-            BodcastView()
+            Text("In Comming")
                 .tabItem{
                     Label("Ecouter",systemImage: "play.circle.fill")
                 }
-            BodcastView()
+            Text("In Comming")
                 .tabItem{
                     Label("Explorer",systemImage: "square.grid.2x2.fill")
                 }
@@ -22,11 +22,13 @@ struct ContentView: View {
                 .tabItem{
                     Label("Bibliotêque",systemImage: "square.stack.fill")
                 }
-            BodcastView()
+            Text("In Comming")
                 .tabItem{
                     Label("Rechercher", systemImage: "magnifyingglass")
                 }
-        }
+            
+        }.background(Color.white)
+        .accentColor(Color("customColor"))
     }
 }
 
